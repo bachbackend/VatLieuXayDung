@@ -1,0 +1,6 @@
+@VatLieuXayDung_HostAddress = http://localhost:5151
+
+GET {{VatLieuXayDung_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
