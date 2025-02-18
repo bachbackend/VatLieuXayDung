@@ -21,13 +21,126 @@ namespace VatLieuXayDung.Controllers
         private readonly IConfiguration _configuration;
         private readonly B3ifu0huowhy6xqzhw41Context _context;
         private readonly PaginationSettings _paginationSettings;
+        private readonly MailService _mailService;
 
-        public UserController(IConfiguration configuration, B3ifu0huowhy6xqzhw41Context context, IOptions<PaginationSettings> paginationSettings)
+        public UserController(IConfiguration configuration, B3ifu0huowhy6xqzhw41Context context, IOptions<PaginationSettings> paginationSettings, MailService mailService)
         {
             _configuration = configuration;
             _context = context;
             _paginationSettings = paginationSettings.Value;
+            _mailService = mailService;
         }
+
+        private static readonly char[] Characters =
+       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".ToCharArray();
+        private static readonly Random Random = new Random();
+
+        public static string GenerateRandomString(int length = 32)
+        {
+            if (length <= 0)
+            {
+                throw new ArgumentException("Length must be greater than 0", nameof(length));
+            }
+
+            char[] result = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = Characters[Random.Next(Characters.Length)];
+            }
+
+            return new string(result);
+        }
+
+        [HttpPost("ResetPassword/{email}")]
+        public async Task<IActionResult> ResetPassword(string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(email));
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found." });
+            }
+
+            // Generate a reset token
+            string resetToken = GenerateRandomString();
+            DateTime expiry = DateTime.Now.AddHours(1); // Token hết hạn sau 1 giờ
+
+            // Save token and expiry to database
+            user.ResetToken = resetToken;
+            user.ResetTokenExpired = expiry;
+            await _context.SaveChangesAsync();
+
+            // Generate reset link with token
+            string resetLink = $"http://127.0.0.1:5500/confirmResetPassword.html?token={resetToken}";
+
+            var subject = "Reset Password";
+            var message = $"Click the link below to reset your password:\n{resetLink}\n\nLink will expire in 1 hour.";
+
+            // Send email
+            _mailService.SendEmailAsync(user.Email, subject, message);
+
+            // Return result including email and token
+            return Ok(new
+            {
+                message = "Password reset link has been sent to your email.",
+                email = user.Email,
+                token = resetToken,
+                resetLink = resetLink
+            });
+        }
+
+        //[HttpPost("ConfirmResetPassword")]
+        //public async Task<IActionResult> ConfirmResetPassword([FromQuery] string email, [FromQuery] string token, [FromBody] ResetPasswordRequestDTO request)
+        //{
+        //    var user = await _context.Users
+        //        .FirstOrDefaultAsync(u => u.Email == email && u.ResetTokenExpired > DateTime.UtcNow);
+
+        //    if (user == null)
+        //    {
+        //        return BadRequest(new { message = "Invalid or expired request." });
+        //    }
+
+        //    // Check token validity
+        //    if (user.ResetToken != token)
+        //    {
+        //        return BadRequest(new { message = "Invalid or expired token." });
+        //    }
+
+        //    // Hash new password and save to DB
+        //    user.Password = request.NewPassword.Hash();
+        //    user.ResetToken = null; // Remove token
+        //    user.ResetTokenExpired = null; // Remove token expiry
+        //    await _context.SaveChangesAsync();
+
+        //    return Ok(new { message = "Mật khẩu đã được đặt lại thành công." });
+        //}
+
+        [HttpPost("ConfirmResetPassword")]
+        public async Task<IActionResult> ConfirmResetPassword([FromQuery] string token, [FromBody] ResetPasswordRequestDTO request)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.ResetToken == token && u.ResetTokenExpired > DateTime.UtcNow);
+
+            if (user == null)
+            {
+                return BadRequest(new { message = "Invalid or expired token." });
+            }
+
+            // Check token validity
+            //if (user.ResetToken != token)
+            //{
+            //    return BadRequest(new { message = "Invalid or expired token." });
+            //}
+
+            // Hash new password and save to DB
+            user.Password = request.NewPassword.Hash();
+            user.ResetToken = null; // Remove token
+            user.ResetTokenExpired = null; // Remove token expiry
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Mật khẩu đã được đặt lại thành công." });
+        }
+
+
 
         [Authorize(Policy = "AdminOnly")]
         [HttpPost("CreateAdmin")]

@@ -19,6 +19,12 @@ public partial class User
 
     public sbyte Status { get; set; }
 
+    public string Email { get; set; } = null!;
+
+    public string? ResetToken { get; set; }
+
+    public DateTime? ResetTokenExpired { get; set; }
+
     public virtual ICollection<Article> Articles { get; set; } = new List<Article>();
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();

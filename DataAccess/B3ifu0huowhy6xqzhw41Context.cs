@@ -451,12 +451,21 @@ public partial class B3ifu0huowhy6xqzhw41Context : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("created_at");
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .HasColumnName("email");
             entity.Property(e => e.LastLogin)
                 .HasColumnType("datetime")
                 .HasColumnName("last_login");
             entity.Property(e => e.Password)
                 .HasMaxLength(255)
                 .HasColumnName("password");
+            entity.Property(e => e.ResetToken)
+                .HasMaxLength(255)
+                .HasColumnName("reset_token");
+            entity.Property(e => e.ResetTokenExpired)
+                .HasColumnType("datetime")
+                .HasColumnName("reset_token_expired");
             entity.Property(e => e.Role).HasColumnName("role");
             entity.Property(e => e.Status).HasColumnName("status");
             entity.Property(e => e.Username)
