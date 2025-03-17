@@ -21,6 +21,7 @@
             public string Name { get; set; } = null!;
 
             public string Image { get; set; } = null!;
+            public int? SaleQuantity { get; set; }
             public string Description { get; set; } = null!;
 
             public sbyte Status { get; set; }

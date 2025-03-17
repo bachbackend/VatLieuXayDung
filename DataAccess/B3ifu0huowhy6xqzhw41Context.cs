@@ -30,6 +30,8 @@ public partial class B3ifu0huowhy6xqzhw41Context : DbContext
 
     public virtual DbSet<ConstructionProject> ConstructionProjects { get; set; }
 
+    public virtual DbSet<Contact> Contacts { get; set; }
+
     public virtual DbSet<Image> Images { get; set; }
 
     public virtual DbSet<MemberCompany> MemberCompanies { get; set; }
@@ -210,6 +212,28 @@ public partial class B3ifu0huowhy6xqzhw41Context : DbContext
                 .HasColumnName("name");
         });
 
+        modelBuilder.Entity<Contact>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("contact");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.ContactDate)
+                .HasColumnType("datetime")
+                .HasColumnName("contact_date");
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .HasColumnName("email");
+            entity.Property(e => e.Name)
+                .HasMaxLength(255)
+                .HasColumnName("name");
+            entity.Property(e => e.Phone)
+                .HasMaxLength(20)
+                .HasColumnName("phone");
+            entity.Property(e => e.Status).HasColumnName("status");
+        });
+
         modelBuilder.Entity<Image>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -368,6 +392,9 @@ public partial class B3ifu0huowhy6xqzhw41Context : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
                 .HasColumnName("name");
+            entity.Property(e => e.SaleQuantity)
+                .HasDefaultValueSql("'0'")
+                .HasColumnName("sale_quantity");
             entity.Property(e => e.Status).HasColumnName("status");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)

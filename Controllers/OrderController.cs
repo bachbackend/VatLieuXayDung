@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Text;
 using VatLieuXayDung.DataAccess;
 using VatLieuXayDung.DTO;
 using VatLieuXayDung.Service;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace VatLieuXayDung.Controllers
 {
@@ -29,7 +31,9 @@ namespace VatLieuXayDung.Controllers
             int pageNumber = 1,
             int? pageSize = null,
             int? status = null,
-            string? name = null
+            string? name = null,
+            DateTime? startDate = null,   // Lọc theo ngày bắt đầu
+            DateTime? endDate = null     // Lọc theo ngày kết thúc
             //int? categoryId = null
             )
         {
@@ -47,14 +51,21 @@ namespace VatLieuXayDung.Controllers
                 orders = orders.Where(p => p.User.Username.Contains(name));
             }
 
-            //if (categoryId.HasValue)
-            //{
-            //    products = products.Where(p => p.CategoryId == categoryId.Value);
-            //}
 
             if (status.HasValue)
             {
                 orders = orders.Where(p => p.StatusId == status.Value);
+            }
+
+            if (startDate.HasValue)
+            {
+                orders = orders.Where(o => o.OrderDate >= startDate.Value);
+            }
+
+            // Lọc theo ngày kết thúc nếu có giá trị
+            if (endDate.HasValue)
+            {
+                orders = orders.Where(o => o.OrderDate <= endDate.Value);
             }
 
             orders = orders.OrderByDescending(p => p.OrderDate);
@@ -273,6 +284,21 @@ namespace VatLieuXayDung.Controllers
                 return Ok(new { message = "Không thể hủy đơn hàng đang giao hoặc đã hoàn thành." });
             }
 
+            var orderDetails = await _context.OrderDetails
+                .Where(od => od.OrderId == orderId)
+                .ToListAsync();
+
+            foreach (var detail in orderDetails)
+            {
+                var productItem = await _context.Products
+                    .FirstOrDefaultAsync(pi => pi.Id == detail.ProductId);
+
+                if (productItem != null)
+                {
+                    productItem.SaleQuantity -= detail.Quantity;
+                }
+            }
+
             // Cập nhật trạng thái
             order.StatusId = 6;
             order.ReasonId = reasonId;
@@ -381,6 +407,71 @@ namespace VatLieuXayDung.Controllers
             return Ok(orders);
         }
 
+        [HttpGet("GetCSVFile")]
+        public async Task<ActionResult> GetOrderCSVFile(int? orderStatusId, DateTime? startDate, DateTime? endDate)
+        {
+            var query = _context.Orders
+                .Include(od => od.User)
+                .Include(od => od.Status)
+                .Include(od => od.Reason)
+                .Include(od => od.ShippingAddress)
+                    .ThenInclude(od => od.City)
+                .AsQueryable();
+
+            if (orderStatusId.HasValue)
+            {
+                query = query.Where(o => o.Status.Id == orderStatusId.Value);
+            }
+
+            // Lọc theo ngày đặt hàng nếu có
+            if (startDate.HasValue)
+            {
+                query = query.Where(o => o.OrderDate >= startDate.Value);
+            }
+            if (endDate.HasValue)
+            {
+                endDate = endDate.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+                query = query.Where(o => o.OrderDate <= endDate.Value);
+            }
+
+            var orders = await query.ToListAsync();
+
+            StringBuilder strCSV = new StringBuilder();
+            strCSV.AppendLine("STT,Khách hàng,Email,Số điện thoại,Địa chỉ,Thành phố,Thành tiền,Ngày đặt hàng,Trạng thái đơn hàng,Lý do hủy đơn");
+
+            int index = 1;
+            foreach (var order in orders)
+            {
+                strCSV.AppendLine($"\"{index}\"," +
+                                  $"\"{order.User.Username}\"," +
+                                  $"\"{order.User.Email}\"," +
+                                  $"\"{order.ShippingAddress.PhoneNumber}\"," +
+                                  $"\"{order.ShippingAddress.SpecificAddress}\"," +
+                                  $"\"{order.ShippingAddress.City.Name}\"," +
+                                  $"\"{order.TotalPrice?.ToString() ?? "0"}\"," +
+                                  $"\"{order.OrderDate}\"," +
+                                  $"\"{order.Status.Name}\"," +
+                                  $"\"{order.Reason?.Name ?? "Không có"}\"");
+                index++;
+            }
+
+            byte[] bom = Encoding.UTF8.GetPreamble();
+            using (MemoryStream memory = new MemoryStream())
+            {
+                memory.Write(bom, 0, bom.Length);
+                using (StreamWriter writer = new StreamWriter(memory, Encoding.UTF8, 1024, leaveOpen: true))
+                {
+                    await writer.WriteAsync(strCSV.ToString());
+                    await writer.FlushAsync();
+                }
+                memory.Position = 0;
+                return File(memory.ToArray(), "text/csv", "Order.csv");
+            }
+        }
+
+
+
+
         //public class OrderDTO
         //{
         //    public int Id { get; set; }
@@ -410,7 +501,7 @@ namespace VatLieuXayDung.Controllers
         //    public string ReasonText { get; set; }
         //    public List<OrderDetailDTO> OrderDetails { get; set; } = new List<OrderDetailDTO>();
         //}
-        
+
 
 
 

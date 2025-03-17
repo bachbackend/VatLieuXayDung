@@ -469,12 +469,23 @@ namespace VatLieuXayDung.Controllers
 
             await _context.OrderDetails.AddRangeAsync(orderDetails);
 
+            // Cập nhật số lượng bán của sản phẩm
+            foreach (var item in cartItems)
+            {
+                var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductId);
+                if (product != null)
+                {
+                    product.SaleQuantity = (product.SaleQuantity ?? 0) + item.Quantity;
+                }
+            }
+
             // Xóa giỏ hàng và lưu tất cả thay đổi
             _context.Carts.RemoveRange(cartItems);
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Thanh toán thành công!", orderId = order.Id });
         }
+
 
 
 
