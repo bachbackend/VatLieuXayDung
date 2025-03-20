@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            height: 100%;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f8f9fa;
+            background-image: url('https://wallsneedlove.com/cdn/shop/products/w0267_1s_Realistic-Bricks-Removable-Peel-and-Stick-Wallpaper_Repeating-Pattern-Sample-1.jpg?v=1734717538');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+        }
+
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-register {
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-register .form-floating {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .form-register .form-floating label {
+            color: #712cf9;
+        }
+
+        .form-register .form-floating input {
+            border-radius: 10px;
+            border: 2px solid #712cf9;
+            padding: 10px;
+            font-size: 16px;
+            color: #495057;
+            background-color: #fff;
+        }
+
+        .form-register .form-floating input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(113, 44, 249, 0.5);
+        }
+
+        .form-register .btn-primary {
+            background-color: #712cf9;
+            border-color: #712cf9;
+            font-weight: bold;
+        }
+
+        .form-register .btn-primary:hover {
+            background-color: #6528e0;
+        }
+
+        .text-danger {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <main class="form-register">
+                <form class="text-center" id="registerForm">
+                    <img class="login-logo mb-4" src="./images/logo.jpg"
+                        alt="Hoàng Thành Thăng Long" width="300" height="250">
+                    <h1 class="h3 mb-3 fw-normal">Đăng ký</h1>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Tên đăng nhập"
+                            required maxlength="20">
+                        <label for="username">Tên đăng nhập <span class="text-danger">*</span></label>
+                    </div>
+                    <!-- <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required
+                            maxlength="50">
+                        <label for="email">Email <span class="text-danger">*</span></label>
+                    </div> -->
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu"
+                            required maxlength="20">
+                        <label for="password">Mật khẩu <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                            placeholder="Xác nhận mật khẩu" required maxlength="20">
+                        <label for="confirmPassword">Xác nhận mật khẩu <span class="text-danger">*</span></label>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">Đăng ký</button>
+                    <a href="./login.html">Quay lại đăng nhập</a>
+                </form>
+            </main>
+        </div>
+    </div>
+    <script>
+        async function registerUser(event) {
+            event.preventDefault(); // Ngừng hành động mặc định của form
+
+            // Lấy dữ liệu từ form
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value; // Chuyển FormData thành object
+            });
+
+            // Kiểm tra mật khẩu có khớp không
+            if (data.password !== data.confirmPassword) {
+                alert('Mật khẩu xác nhận không khớp. Vui lòng thử lại.');
+                return;
+            }
+
+            // Tạo yêu cầu gửi đến API
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'accept': '*/*',
+                    'Content-Type': 'application/json;odata.metadata=minimal;odata.streaming=true'
+                },
+                body: JSON.stringify(data) // Chuyển đổi dữ liệu thành JSON
+            };
+
+            try {
+                const response = await fetch('https://localhost:7171/api/User/Register', requestOptions);
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Đăng ký thành công!');
+                    window.location.href = './Login.html';
+                } else {
+                    const errorData = await response.json();
+                    alert(`Đăng ký thất bại: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Lỗi khi gọi API:', error);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại sau.');
+            }
+        }
+
+        // Đảm bảo gọi hàm khi submit form
+        document.getElementById('registerForm').addEventListener('submit', registerUser);
+    </script>
+</body>
+
+</html>

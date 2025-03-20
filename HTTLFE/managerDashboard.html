@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #eceff1;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            background-color: #546e7a;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .container-fluid {
+            padding-top: 20px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            background-color: #ff7043;
+            color: white;
+            border-radius: 12px 12px 0 0;
+            font-weight: 500;
+        }
+
+        .card-body {
+            background-color: white;
+            color: #37474f;
+        }
+
+        .card-footer {
+            background-color: #f5f5f5;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .stat-card i {
+            font-size: 3.5em;
+            color: #ff7043;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #455a64;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">HTTL Management Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="getUserProfile()">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showChangePasswordPopup()">Change Password</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Hello, <span id="usernamePlaceholder"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/605/605712.png" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Sản phẩm</h3>
+                    <a href="product-management.html" class="btn btn-warning">Quản lý sản phẩm</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7108/7108235.png" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Bài viết</h3>
+                    <a href="./article-management.html" class="btn btn-warning">Quản lý bài viết</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2728/2728447.png" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Đơn hàng</h3>
+                    <a href="./order-management.html" class="btn btn-warning">Quản lý đơn hàng</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="./images/email-07-512.jpg" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Liên lạc</h3>
+                    <a href="./contact-management.html" class="btn btn-warning">Quản lý thông tin liên lạc</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6372/6372226.png" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Updating...</h3>
+                    <a href="#" class="btn btn-warning">Updating...</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6372/6372226.png" alt="Hoàng Thành Thăng Long"
+                        style="width: 50px; height: 50px;">
+                    <h3>Updating...</h3>
+                    <a href="#" class="btn btn-warning">Updating...</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <a href="https://vi.wikipedia.org/wiki/Xi_m%C4%83ng" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1448349078/photo/cement-bags-o-sacks-isolated-on-white.jpg?s=612x612&w=0&k=20&c=F5_VosP_qf9xYgyVth-Vs3OsSjaL0gZBMae39zZ3Zmg="
+                            class="card-img-top" alt="Cement">
+                        <div class="card-body">
+                            <h5 class="card-title">Cement</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://vi.wikipedia.org/wiki/C%C3%A1t" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO1EpHEA-h687ISElw2ZvEOHzMEWZcAkcNokxAMGLn45cp7-8R3OOlhJS58R8SJmJbAXY&usqp=CAU"
+                            class="card-img-top" alt="Steel">
+                        <div class="card-body">
+                            <h5 class="card-title">Sand</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://vi.wikipedia.org/wiki/G%E1%BA%A1ch_nung" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="https://muranostone.com/cdn/shop/files/Murano-Bricks-Red-_B01.jpg?v=1700488339&width=800"
+                            class="card-img-top" alt="Truck">
+                        <div class="card-body">
+                            <h5 class="card-title">Brick</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://vi.wikipedia.org/wiki/%C4%90%C3%A1" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="https://www.berwynslate.com/wp-content/uploads/2022/09/Photo-Sep-07-12-37-48-PM-scaled.jpg"
+                            class="card-img-top" alt="Crane">
+                        <div class="card-body">
+                            <h5 class="card-title">Stone</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog"
+        aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Đổi mật khẩu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="oldPassword">Mật khẩu cũ</label>
+                            <input type="password" class="form-control" id="oldPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Mật khẩu mới</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Nhập lại mật khẩu mới</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="submitChangePassword()">Xác nhận</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Hoang Thanh Thang Long Management Dashboard | Powered By Bach Le
+    </footer>
+    <script>
+        function logout() {
+            localStorage.removeItem('accessToken');
+            window.location.href = './login.html';
+        }
+
+        function parseJwt(token) {
+            try {
+                let base64Url = token.split('.')[1];
+                let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                console.error("Invalid JWT Token", e);
+                return null;
+            }
+        }
+
+        // Lấy JWT từ localStorage (hoặc từ cookie)
+        let token = localStorage.getItem("accessToken"); // Đảm bảo bạn đã lưu token vào localStorage khi login
+        if (token) {
+            let decodedToken = parseJwt(token);
+            if (decodedToken && decodedToken.unique_name) {
+                document.getElementById("usernamePlaceholder").textContent = decodedToken.unique_name;
+            }
+        }
+
+        // $(document).ready(function () {
+        //     $('.nav-link[href="#profile"]').click(function (e) {
+        //         e.preventDefault();
+        //         $('#profileModal').modal('show');
+        //     });
+        // });
+
+        // function parseJwt(token) {
+        //     const base64Url = token.split('.')[1];
+        //     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        //     const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        //         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        //     }).join(''));
+
+        //     return JSON.parse(jsonPayload);
+        // }
+
+        // function getUserProfile() {
+        //     // Lấy token từ localStorage
+        //     const token = localStorage.getItem('accessToken');
+
+        //     if (!token) {
+        //         alert('Không tìm thấy token.');
+        //         return;
+        //     }
+
+        //     // Giải mã token để lấy userId
+        //     const decoded = parseJwt(token);
+        //     const userId = decoded.nameid;
+
+        //     if (!userId) {
+        //         alert('Không tìm thấy userId.');
+        //         return;
+        //     }
+
+        //     // Gọi API để lấy thông tin người dùng
+        //     fetch(`https://localhost:7214/api/Profile/GetById/${userId}`, {
+        //         method: 'GET',
+        //         headers: {
+        //             'Authorization': 'Bearer ' + token
+        //         }
+        //     })
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Lỗi khi gọi API.');
+        //             }
+        //             return response.json();
+        //         })
+        //         .then(data => {
+        //             if (data) {
+        //                 showProfilePopup(data);
+        //             } else {
+        //                 alert('Không tìm thấy thông tin người dùng.');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             console.error('Lỗi khi lấy thông tin:', error);
+        //             alert('Đã xảy ra lỗi khi lấy thông tin người dùng.');
+        //         });
+        // }
+
+        // function showProfilePopup(profile) {
+        //     const roleText = getRoleText(profile.role);
+        //     const statusText = getStatusText(profile.status);
+        //     // Kiểm tra và xóa modal cũ nếu tồn tại
+        //     const existingModal = document.getElementById('profileModal');
+        //     if (existingModal) {
+        //         existingModal.remove();
+        //     }
+
+        //     const profileHtml = `
+        //         <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        //             <div class="modal-dialog" role="document">
+        //                 <div class="modal-content">
+        //                     <div class="modal-header">
+        //                         <h5 class="modal-title" id="profileModalLabel">Thông tin người dùng</h5>
+        //                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        //                             <span aria-hidden="true">&times;</span>
+        //                         </button>
+        //                     </div>
+        //                     <div class="modal-body">
+        //                         <p><strong>Tên:</strong> ${profile.username}</p>
+        //                         <p><strong>Email:</strong> ${profile.email}</p>
+        //                         <p><strong>Vai trò:</strong> ${roleText}</p>
+        //                         <p><strong>Trạng thái:</strong> ${statusText}</p>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         `;
+
+        //     document.body.insertAdjacentHTML('beforeend', profileHtml);
+        //     $('#profileModal').modal('show');
+
+        //     // Đóng modal và xóa khỏi DOM sau khi đóng
+        //     $('#profileModal').on('hidden.bs.modal', function () {
+        //         $(this).remove();
+        //     });
+        // }
+
+        // // Hàm chuyển đổi role thành text
+        // function getRoleText(role) {
+        //     switch (role) {
+        //         case 0: return 'Người dùng';
+        //         case 1: return 'Admin';
+        //         case 2: return 'Quản lý';
+        //         default: return 'Không xác định';
+        //     }
+        // }
+
+        // // Hàm chuyển đổi status thành text
+        // function getStatusText(status) {
+        //     switch (status) {
+        //         case 0: return 'Chưa kích hoạt';
+        //         case 1: return 'Hoạt động';
+        //         case 2: return 'Bị chặn';
+        //         default: return 'Không xác định';
+        //     }
+        // }
+
+        // // Hiển thị popup đổi mật khẩu
+        // function showChangePasswordPopup() {
+        //     $('#changePasswordModal').modal('show');
+        // }
+
+        // // Hàm gửi yêu cầu đổi mật khẩu
+        // async function submitChangePassword() {
+        //     const oldPassword = document.getElementById('oldPassword').value;
+        //     const newPassword = document.getElementById('newPassword').value;
+        //     const confirmPassword = document.getElementById('confirmPassword').value;
+
+        //     if (newPassword !== confirmPassword) {
+        //         alert('Mật khẩu mới không khớp.');
+        //         return;
+        //     }
+
+        //     // Lấy JWT từ localStorage
+        //     const token = localStorage.getItem('accessToken');
+        //     if (!token) {
+        //         alert('Không tìm thấy token.');
+        //         return;
+        //     }
+
+        //     // Giải mã JWT để lấy email
+        //     const email = getEmailFromJwt(token);
+        //     if (!email) {
+        //         alert('Không tìm thấy email.');
+        //         return;
+        //     }
+
+        //     // Dữ liệu gửi lên API
+        //     const data = {
+        //         email: email,
+        //         oldPassword: oldPassword,
+        //         newPassword: newPassword
+        //     };
+
+        //     try {
+        //         const response = await fetch('https://localhost:7214/api/Profile/UpdatePassword', {
+        //             method: 'PUT',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //                 'Authorization': 'Bearer ' + token
+        //             },
+        //             body: JSON.stringify(data)
+        //         });
+
+        //         if (response.ok) {
+        //             alert('Đổi mật khẩu thành công.');
+        //             $('#changePasswordModal').modal('hide');
+        //         } else {
+        //             const result = await response.json();
+        //             alert('Lỗi: ' + result.message);
+        //         }
+        //     } catch (error) {
+        //         console.error('Lỗi khi gửi yêu cầu:', error);
+        //         alert('Đã xảy ra lỗi. Vui lòng thử lại.');
+        //     }
+        // }
+
+        // // Giải mã JWT để lấy email
+        // function getEmailFromJwt(token) {
+        //     try {
+        //         const payload = JSON.parse(atob(token.split('.')[1]));  // Giải mã payload
+        //         return payload.email || '';  // Trả về email
+        //     } catch (error) {
+        //         console.error('Lỗi khi giải mã JWT:', error);
+        //         return null;
+        //     }
+        // }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

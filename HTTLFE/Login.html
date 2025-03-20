@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+
+        /* html,
+        body {
+            height: 100%;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f8f9fa;
+            background-image: url('https://wallsneedlove.com/cdn/shop/products/w0267_1s_Realistic-Bricks-Removable-Peel-and-Stick-Wallpaper_Repeating-Pattern-Sample-1.jpg?v=1734717538');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .form-floating {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .form-signin .form-floating label {
+            color: #712cf9;
+        }
+
+        .form-signin .form-floating input {
+            border-radius: 10px;
+            border: 2px solid #712cf9;
+            padding: 10px;
+            font-size: 16px;
+            color: #495057;
+            background-color: #fff;
+        }
+
+        .form-signin .form-floating input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(113, 44, 249, 0.5);
+        }
+
+        .form-signin .form-floating input::placeholder {
+            color: #adb5bd;
+        }
+
+        .form-signin .form-check a {
+            color: #712cf9;
+        }
+
+        .form-signin .btn-primary {
+            background-color: #712cf9;
+            border-color: #712cf9;
+            font-weight: bold;
+        }
+
+        .form-signin .btn-primary:hover {
+            background-color: #6528e0;
+            border-color: #6528e0;
+        }
+
+        .form-signin .btn-primary:focus {
+            box-shadow: 0 0 10px rgba(113, 44, 249, 0.5);
+        }
+
+        .form-signin .btn-primary:active {
+            background-color: #5a23c8;
+            border-color: #5a23c8;
+        }
+
+        .form-signin a {
+            color: #712cf9;
+        }
+
+        .login-logo {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        } */
+
+
+        /* Custom CSS for login form */
+
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    background-image: url('https://wallsneedlove.com/cdn/shop/products/w0267_1s_Realistic-Bricks-Removable-Peel-and-Stick-Wallpaper_Repeating-Pattern-Sample-1.jpg?v=1734717538');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Thêm padding để tránh sát mép */
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Tăng max-width để form lớn hơn trên mobile */
+}
+
+.form-signin {
+    max-width: 100%;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-signin .form-floating label {
+    color: #712cf9;
+}
+
+.form-signin .form-floating input {
+    border-radius: 10px;
+    border: 2px solid #712cf9;
+    padding: 12px;
+    font-size: 18px; /* Tăng kích thước chữ */
+    color: #495057;
+    width: 100%;
+}
+
+.form-signin .form-floating input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(113, 44, 249, 0.5);
+}
+
+.form-signin .btn-primary {
+    background-color: #712cf9;
+    border-color: #712cf9;
+    font-weight: bold;
+    font-size: 18px; /* Tăng kích thước nút */
+    padding: 12px; /* Tăng padding */
+}
+
+.form-signin .btn-primary:hover {
+    background-color: #6528e0;
+    border-color: #6528e0;
+}
+
+.form-signin a {
+    color: #712cf9;
+    font-size: 16px; /* Tăng size chữ */
+}
+
+.login-logo {
+    width: 100%;
+    max-width: 250px; /* Giảm kích thước logo */
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* 📱 Responsive cho mobile */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%; /* Giúp form chiếm 90% màn hình trên mobile */
+        max-width: 100%;
+    }
+
+    .form-signin .form-floating input {
+        font-size: 16px; /* Giảm kích thước input cho phù hợp */
+        padding: 10px;
+    }
+
+    .form-signin .btn-primary {
+        font-size: 16px; /* Nhỏ hơn một chút để phù hợp với mobile */
+        padding: 10px;
+    }
+
+    .login-logo {
+        max-width: 200px; /* Nhỏ hơn trên mobile */
+    }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <main class="form-signin">
+                <form class="text-center" id="loginForm">
+                    <img class="login-logo mb-4" src="./images/logo.jpg" alt="Hoàng Thành Thăng Long" width="700"
+                        height="250">
+                    <h1 class="h3 mb-3 fw-normal">Đăng nhập</h1>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="username" name="username"
+                            placeholder="Tên đăng nhập">
+                        <label for="username">Tên đăng nhập</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Mật khẩu">
+                        <label for="password">Mật khẩu</label>
+                        <button type="button" id="togglePassword"
+                            class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-2"
+                            style="border: none; background: transparent;">
+                            <i class="bi bi-eye-slash" id="eyeIcon"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-check text-start my-3">
+                        <a href="./resetPassword.html">Forgot Password?</a>
+                        <!-- <br>
+                        <a href="./changePassword.html">Change Password?</a> -->
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+                    <a href="./register.html">Đăng ký tài khoản mới</a>
+                </form>
+            </main>
+        </div>
+    </div>
+    <script>
+        async function loginUser(event) {
+            event.preventDefault();
+
+            let form = event.target;
+            let formData = new FormData(form);
+            let data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            let requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Accept': '*/*',
+                    'Content-Type': 'application/json;odata.metadata=minimal;odata.streaming=true'
+                },
+                body: JSON.stringify(data) // Send the data as a JSON object
+            };
+
+            try {
+                let response = await fetch('https://localhost:7171/api/User/login', requestOptions); // Updated URL
+                if (response.ok) {
+                    let responseData = await response.json();
+
+                    // Lưu token vào localStorage và sessionStorage
+                    localStorage.setItem('accessToken', responseData.token);
+                    sessionStorage.setItem('accessToken', responseData.token);
+
+                    // Giải mã JWT để lấy vai trò (role)
+                    const token = responseData.token;
+                    const payload = JSON.parse(atob(token.split('.')[1])); // Decode phần payload
+                    const userRole = payload.role;
+
+                    console.log("Thông tin từ JWT:", payload);
+
+                    // Chuyển hướng dựa trên role
+                    if (userRole === "1") {
+                        window.location.href = './managerDashboard.html';
+                    } else {
+                        window.location.href = './home.html';
+                    }
+                } else {
+                    let errorData = await response.json();
+                    alert(`Login failed: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Error logging in:', error);
+                alert('Login failed due to network error');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', loginUser);
+
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text'; // Hiển thị mật khẩu
+                eyeIcon.classList.remove('bi-eye-slash');
+                eyeIcon.classList.add('bi-eye');
+            } else {
+                passwordField.type = 'password'; // Ẩn mật khẩu
+                eyeIcon.classList.remove('bi-eye');
+                eyeIcon.classList.add('bi-eye-slash');
+            }
+        });
+    </script>
+</body>
+
+</html>
