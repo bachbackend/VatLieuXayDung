@@ -595,48 +595,40 @@
             style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
             <style>
-                .social-icons {
-                position: fixed;
-                right: 20px;
-                bottom: 50px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                z-index: 1000;
-            }
-            
-            .icon {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                transition: 0.3s;
-                background: transparent; /* Bỏ nền để chỉ hiển thị ảnh */
-            }
-            
-            .icon img {
-                width: 100%; /* Căn chỉnh icon cho đẹp */
-                height: 100%;
-                border-radius: 50%; /* Giữ icon tròn */
-                object-fit: cover; /* Đảm bảo ảnh không bị méo */
-            }
-            .icon img {
+                .icon.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* vị trí dưới cùng */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden; /* Đảm bảo bo tròn */
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.icon:hover img {
-    transform: scale(1.2); /* Phóng to nhẹ */
-    filter: brightness(1.2); /* Làm sáng ảnh */
+.icon.scroll-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon.scroll-top:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.2);
 }
             </style>
             
             <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
+                <!-- <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
                     <img src="./images/2023_Facebook_icon.svg.png" alt="Facebook gạch hoàng thành thăng long">
-                </a>
+                </a> -->
                 <!-- <a href="#" class="icon">
                     <img src="./images/725300.png" alt="YouTube gạch hoàng thành thăng long">
                 </a>
@@ -646,9 +638,9 @@
                 <a href="tel:0773026042" class="icon">
                     <img src="./images/1180304.png" alt="Phone gạch Hoàng Thành Thăng Long">
                 </a> -->
-                <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
+                <!-- <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
                     <img src="./images/zalo-iconnnnnnnnnnnnnnnnnn.png" alt="Zalo gạch hoàng thành thăng long">
-                </a>
+                </a> -->
                 <a href="#" class="icon scroll-top">
                     <img src="./images/top.png" alt="Scroll Up">
                 </a>
@@ -718,6 +710,36 @@
                                     .menu-item:hover .dropdown-menu {
                                         display: block;
                                     }
+
+                                    .dropdown-menu1 {
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+.dropdown-menu1 li {
+  margin: 5px 0;
+}
+
+.dropdown-menu1 li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: nhẹ nhàng, không làm block bị cứng */
+.dropdown-menu1 li a:hover {
+  background-color: #f2f2f2;
+  color: #ff6600;
+}
+
                                 </style>
                                 <li
                                 class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -726,7 +748,7 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>GIỚI THIỆU</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./AboutUs.html"><strong>Giới thiệu về chúng tôi</strong></a></li>
                                         <li><a href="./HistoryCompany.html"><strong>Lịch sử phát triển</strong></a></li>
                                         <li><a href="./DevelopmentOrientation.html"><strong>Định hướng phát triển</strong></a></li>
@@ -741,12 +763,12 @@
                                     </a>
                                 </li> -->
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218 dropdown">
-                                    <a href="#" class="twbb-item twbb-item-active" id="category-menu"
+                                    <a href="./Building-Materials.html" class="twbb-item twbb-item-active" id="category-menu"
                                         style="font-family: 'Segoe UI', sans-serif !important;">
                                         <strong>SẢN PHẨM</strong>
                                     </a>
-                                    <ul class="dropdown-menu" id="category-dropdown" style="display: none; position: absolute; background: white; list-style: none; padding: 10px; border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-                                        <!-- Danh mục sẽ được load ở đây -->
+                                    <ul class="dropdown-menu1" id="category-dropdown" style="display: none; position: absolute; background: white; list-style: none; padding: 20px; border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                                        
                                     </ul>
                                 </li>
                                 
@@ -758,7 +780,7 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>CHÍNH SÁCH</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./Discount-Policy.html"><strong>Chính sách chiết khấu</strong></a></li>
                                         <li><a href="./Sales-Debt-Policy.html"><strong>Chính sách bán hàng & công nợ</strong></a></li>
                                         <li><a href="./Privacy-Policy.html"><strong>Chính sách bảo mật</strong></a></li>
@@ -999,7 +1021,7 @@
                 <div class="elementor-element elementor-element-np95ijcm elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-twbb_woocommerce-breadcrumb"
                     data-id="np95ijcm" data-element_type="widget"
                     data-widget_type="twbb_woocommerce-breadcrumb.default">
-                    <div class="elementor-widget-container">
+                    <div class="elementor-widget-container" style="margin-top: -40px;">
                         <nav class="woocommerce-breadcrumb" aria-label="Breadcrumb"><a href="./Home.html">Trang
                                 chủ</a>&nbsp;/&nbsp;Sản phẩm</nav>
                     </div>
@@ -1007,13 +1029,13 @@
                 <div class="elementor-element elementor-element-wnvqswtx elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-tenweb-archive-title elementor-page-title tenweb-page-title elementor-widget-heading"
                     data-id="wnvqswtx" data-element_type="widget" data-widget_type="tenweb-archive-title.default">
                     <div class="elementor-widget-container">
-                        <h1 class="elementor-heading-title elementor-size-default">Các sản phẩm gạch của chúng tôi</h1>
+                        <h1 class="elementor-heading-title elementor-size-default" style="text-align: center; margin-top: -30px;">Các sản phẩm gạch của chúng tôi</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="elementor-element elementor-element-10h95ckh twbb_section e-con-boxed e-flex e-con e-parent e-lazyloaded"
-            data-id="10h95ckh" data-element_type="container">
+            data-id="10h95ckh" data-element_type="container" style="margin-top: -40px;">
             <div class="e-con-inner">
                 <div class="elementor-widget-container">
                     <form data-url_beautify="yes" data-ajax="yes" name="tww_filter" id="searchForm"
@@ -1095,7 +1117,7 @@
 
                                 <br>
                                 <!-- Phân trang đặt ngay dưới danh sách sản phẩm -->
-                                <div id="pagination" class="text-center mt-4 d-flex justify-content-center">
+                                <div style="text-align: center;" id="pagination" class="text-center mt-4 d-flex justify-content-center">
                                     <!-- Các nút phân trang sẽ được tạo và hiển thị tại đây -->
                                 </div>
 
@@ -1143,13 +1165,13 @@
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113224">
-                                            <a href="https://10web-site.ai/187/humane-bunny/premium-quality/"
-                                                class="twbb-item">Premium Quality</a>
+                                            <a href="./Building-Materials.html"
+                                                class="twbb-item">Sản phẩm</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113225">
-                                            <a href="https://10web-site.ai/187/humane-bunny/exterior-finishes/"
-                                                class="twbb-item">Exterior Finishes</a>
+                                            <a href="./Article.html"
+                                                class="twbb-item">Bài viết</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -1164,13 +1186,13 @@
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113224">
-                                            <a href="https://10web-site.ai/187/humane-bunny/premium-quality/"
-                                                class="twbb-item">Premium Quality</a>
+                                            <a href="./Building-Materials.html"
+                                                class="twbb-item">Sản phẩm</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113225">
-                                            <a href="https://10web-site.ai/187/humane-bunny/exterior-finishes/"
-                                                class="twbb-item">Exterior Finishes</a>
+                                            <a href="./Article.html"
+                                                class="twbb-item">Bài viết</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -1299,7 +1321,7 @@
                         data-id="7paf0r16" data-element_type="container">
                     </div>
 
-                    <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
+                    <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
                             data-id="rkdqykrp" data-element_type="widget">
@@ -1308,7 +1330,49 @@
                                     style="width: 75%; height: auto; display: block; margin: auto;">
                             </div>
                         </div>
+                    </div> -->
+                    <div style="margin-left: -100px;" class="container123">
+                        <!-- Facebook Page -->
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/profile.php?id=61573656447006" 
+                             data-tabs="" 
+                             data-width="400" 
+                             data-height="200" 
+                             data-small-header="false" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true">
+                        </div>
+                    
+                        <!-- Google Maps -->
+                        <div class="maps-container">
+                            <iframe 
+                                width="400" 
+                                height="200" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3589.4445350448673!2d105.7851447!3d20.9821581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1742523516895!5m2!1svi!2s">
+                            </iframe>
+                        </div>
                     </div>
+                    
+                    <!-- Nhúng Facebook SDK -->
+                    <script async defer crossorigin="anonymous" 
+                            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0">
+                    </script>
+                    
+                    <style>
+                        .container123 {
+                            width: 400px; /* Đặt chiều rộng cố định */
+                            margin: 0 auto; /* Căn giữa */
+                        }
+                        .maps-container {
+                            margin-top: 10px; /* Khoảng cách giữa Facebook và Maps */
+                        }
+                    </style>
                     <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
@@ -1400,7 +1464,8 @@
                                     </li>
                                 </ul>
                             </nav> -->
-                            <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
+
+                            <!-- <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                                 <ul id="menu-2-xutm5wk2" class="twbb-nav-menu twbb-menu_term_id-13708"
                                     data-smartmenus-id="17387178397613186">
                                     <li
@@ -1415,32 +1480,35 @@
                                             class="twbb-item">Privacy Policy</a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </nav> -->
                             <style>
                             </style>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
+                    <div style="margin-right: 50px;" class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
                         data-id="p95d8kgo" data-element_type="widget" data-widget_type="social-icons.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-social-icons-wrapper elementor-grid">
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
-                                        target="_blank">
+                                    <a href="https://www.facebook.com/profile.php?id=61573656447006" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
+                                        target="_blank" rel="noopener noreferrer">
                                         <span class="elementor-screen-only">Facebook</span>
                                         <i class="fab fa-facebook"></i> </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Instagram</span>
-                                        <i class="fab fa-instagram"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-phone elementor-repeater-item-" href="https://zalo.me/0773026042"
+                                    target="_blank" rel="noopener noreferrer">
+                                        <span class="elementor-screen-only">Phone</span>
+                                        <i class="fas fa-phone-alt"></i>
+                                    </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Linkedin</span>
-                                        <i class="fab fa-linkedin"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-email elementor-repeater-item-" 
+                                       href="mailto:hoangthanhthanglongvtb.group@gmail.com" 
+                                       target="_blank">
+                                        <span class="elementor-screen-only">Gmail</span>
+                                        <i class="fas fa-envelope"></i> 
+                                    </a>
                                 </span>
                             </div>
                         </div>

@@ -118,6 +118,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     getCartCount();
     fetchRandomProducts();
+
+    const categoryDropdown = document.getElementById("category-dropdown");
+
+fetch("https://localhost:7171/api/Category/GetAll", {
+    method: "GET",
+    headers: { "Accept": "*/*" }
+})
+    .then(response => {
+        if (!response.ok) throw new Error("Không thể lấy danh mục.");
+        return response.json();
+    })
+    .then(categories => {
+        categoryDropdown.innerHTML = ""; // Xóa dữ liệu cũ
+
+        categories.forEach(category => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="./Building-Materials.html?pcid=${category.id}"><strong>${category.name}</strong></a>`;
+            categoryDropdown.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error("Lỗi khi lấy danh mục:", error);
+    });
 });
 
 function parseJwt(token) {

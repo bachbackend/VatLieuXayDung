@@ -108,7 +108,7 @@
                         <label for="confirmPassword">Xác nhận mật khẩu <span class="text-danger">*</span></label>
                     </div>
                     <button class="btn btn-primary w-100 py-2" type="submit">Đăng ký</button>
-                    <a href="./login.html">Quay lại đăng nhập</a>
+                    <a href="./Home.html">Quay lại trang chủ</a>
                 </form>
             </main>
         </div>
@@ -147,7 +147,7 @@
                 if (response.ok) {
                     const result = await response.json();
                     alert('Đăng ký thành công!');
-                    window.location.href = './Login.html';
+                    window.location.href = './Home.html';
                 } else {
                     const errorData = await response.json();
                     alert(`Đăng ký thất bại: ${errorData.message}`);

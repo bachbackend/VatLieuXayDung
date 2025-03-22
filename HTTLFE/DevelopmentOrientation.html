@@ -1606,9 +1606,9 @@
 </style>
 
 <div class="social-icons">
-    <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
         <img src="./images/2023_Facebook_icon.svg.png" alt="Facebook gạch hoàng thành thăng long">
-    </a>
+    </a> -->
     <!-- <a href="#" class="icon">
         <img src="./images/725300.png" alt="YouTube gạch hoàng thành thăng long">
     </a>
@@ -1618,9 +1618,9 @@
     <a href="tel:0773026042" class="icon">
         <img src="./images/1180304.png" alt="Phone gạch Hoàng Thành Thăng Long">
     </a> -->
-    <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
         <img src="./images/zalo-iconnnnnnnnnnnnnnnnnn.png" alt="Zalo gạch hoàng thành thăng long">
-    </a>
+    </a> -->
     <a href="#" class="icon scroll-top">
         <img src="./images/top.png" alt="Scroll Up">
     </a>
@@ -1690,6 +1690,36 @@
                                     .menu-item:hover .dropdown-menu {
                                         display: block;
                                     }
+
+                                    .dropdown-menu1 {
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+.dropdown-menu1 li {
+  margin: 5px 0;
+}
+
+.dropdown-menu1 li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: nhẹ nhàng, không làm block bị cứng */
+.dropdown-menu1 li a:hover {
+  background-color: #f2f2f2;
+  color: #ff6600;
+}
+
                                 </style>
                                 <li
                                 class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -1698,20 +1728,22 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>GIỚI THIỆU</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./AboutUs.html"><strong>Giới thiệu về chúng tôi</strong></a></li>
                                         <li><a href="./HistoryCompany.html"><strong>Lịch sử phát triển</strong></a></li>
                                         <li><a href="./DevelopmentOrientation.html"><strong>Định hướng phát triển</strong></a></li>
                                     </ul>
                                 </li>
-                                <li
-                                    class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218">
-                                    <a href="./Building-Materials.html" aria-current="page"
-                                        class="twbb-item twbb-item-active"
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218 dropdown">
+                                    <a href="./Building-Materials.html" class="twbb-item twbb-item-active" id="category-menu"
                                         style="font-family: 'Segoe UI', sans-serif !important;">
                                         <strong>SẢN PHẨM</strong>
                                     </a>
+                                    <ul class="dropdown-menu1" id="category-dropdown" style="display: none; position: absolute; background: white; list-style: none; padding: 20px; border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                                        
+                                    </ul>
                                 </li>
+
                                 <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
                                     <a href="Article.html" class="twbb-item"><strong>BÀI VIẾT</strong></a>
@@ -1720,7 +1752,7 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>CHÍNH SÁCH</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./Discount-Policy.html"><strong>Chính sách chiết khấu</strong></a></li>
                                         <li><a href="./Sales-Debt-Policy.html"><strong>Chính sách bán hàng & công nợ</strong></a></li>
                                         <li><a href="./Privacy-Policy.html"><strong>Chính sách bảo mật</strong></a></li>
@@ -3480,18 +3512,18 @@
         </section>
     </div>
     <div data-elementor-type="twbb_footer" data-elementor-id="113234" class="elementor elementor-113234">
-        <div class="elementor-element elementor-element-421iv27r twbb_section e-con-boxed e-flex e-con e-parent e-lazyloaded"
+        <div class="elementor-element elementor-element-421iv27r twbb_section e-con-boxed e-flex e-con e-parent"
             data-id="421iv27r" data-element_type="container" id="footer"
             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
             <div class="e-con-inner">
-                <div class="elementor-element elementor-element-fij077e6 e-con-full e-flex e-con e-parent e-lazyloaded"
+                <div class="elementor-element elementor-element-fij077e6 e-con-full e-flex e-con e-parent"
                     data-id="fij077e6" data-element_type="container">
-                    <div class="elementor-element elementor-element-tept03v4 e-con-full e-flex e-con e-parent e-lazyloaded"
+                    <div class="elementor-element elementor-element-tept03v4 e-con-full e-flex e-con e-parent"
                         data-id="tept03v4" data-element_type="container">
                         <div class="elementor-element elementor-element-bhaveefr elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-heading"
                             data-id="bhaveefr" data-element_type="widget" data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <h5 class="elementor-heading-title elementor-size-default">Company</h5>
+                                <h5 class="elementor-heading-title elementor-size-default">Công ty</h5>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-7bvjb8ub elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial twbb-responsive-nav-menu--vertical twbb-nav-menu__align-left twbb-responsive-nav-menu--tablet-horizontal twbb-responsive-nav-menu--mobile-dropdown twbb-nav-menu--indicator-classic elementor-widget elementor-widget-twbb-nav-menu"
@@ -3503,16 +3535,15 @@
                                     class="twbb-nav-menu--main twbb-nav-menu__container twbb-nav-menu--layout-vertical e--pointer-none">
                                     <ul id="menu-1-7bvjb8ub"
                                         class="twbb-nav-menu twbb-menu_term_id-13705 sm-vertical twbb-menu-columns"
-                                        data-smartmenus-id="17391526562128428">
+                                        data-smartmenus-id="17386604593686902">
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113230">
                                             <p
                                                 class="twbb-item">Công ty TNHH Hoàng Thành Thăng Long</p>
                                         </li>
                                         <li
-                                            class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-113208 current_page_item menu-item-113223">
-                                            <a href="./AboutUs.html" aria-current="page"
-                                                class="twbb-item  twbb-item-active">About Hoàng Thành Thăng Long</a>
+                                            class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113223">
+                                            <a href="./AboutUs.html" class="twbb-item">About Hoàng Thành Thăng Long</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113224">
@@ -3527,21 +3558,23 @@
                                 <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                                     <ul id="menu-2-7bvjb8ub"
                                         class="twbb-nav-menu twbb-menu_term_id-13705 sm-vertical twbb-menu-columns"
-                                        data-smartmenus-id="1739152656212881">
+                                        data-smartmenus-id="17386604593686">
+                                        <li
+                                            class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113230">
+                                            <p
+                                                class="twbb-item" style="color: black; margin-left: 18px;">Công ty TNHH Hoàng Thành Thăng Long</p>
+                                        </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113223">
-                                            <a href="./AboutUs.html" class="twbb-item">About Us</a>
+                                            <a href="./AboutUs.html" class="twbb-item" style="color: black;">About Hoàng Thành Thăng Long</a>
                                         </li>
-
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113224">
-                                            <a href="https://10web-site.ai/187/humane-bunny/premium-quality/"
-                                                class="twbb-item">Premium Quality</a>
+                                            <a href="./Building-Materials.html" class="twbb-item" style="color: black;">Sản Phẩm</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113225">
-                                            <a href="https://10web-site.ai/187/humane-bunny/exterior-finishes/"
-                                                class="twbb-item">Exterior Finishes</a>
+                                            <a href="./Article.html" class="twbb-item" style="color: black;">Bài Viết</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -3550,7 +3583,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-beaylysn e-con-full e-flex e-con e-parent e-lazyloaded"
+                    <div class="elementor-element elementor-element-beaylysn e-con-full e-flex e-con e-parent"
                         data-id="beaylysn" data-element_type="container">
                         <div class="elementor-element elementor-element-m0ql851u elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-heading"
                             data-id="m0ql851u" data-element_type="widget" data-widget_type="heading.default">
@@ -3585,21 +3618,18 @@
                                 <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                                     <ul id="menu-2-3cbpmhe4"
                                         class="twbb-nav-menu twbb-menu_term_id-13706 sm-vertical twbb-menu-columns"
-                                        data-smartmenus-id="17391526562158318">
+                                        data-smartmenus-id="17386604593723894">
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113226">
-                                            <a href="https://10web-site.ai/187/humane-bunny/shop-all/"
-                                                class="twbb-item">Shop All</a>
+                                            <a href="./Discount-Policy.html" class="twbb-item" style="color: black;">Chính sách chiết khấu</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113227">
-                                            <a href="https://10web-site.ai/187/humane-bunny/product-category/building-materials/"
-                                                class="twbb-item">Building Materials</a>
+                                            <a href="./Sales-Debt-Policy.html" class="twbb-item" style="color: black;">Chính sách bán hàng & công nợ</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_tag menu-item-113228">
-                                            <a href="https://10web-site.ai/187/humane-bunny/product-tag/new-arrivals/"
-                                                class="twbb-item">New Arrivals</a>
+                                            <a href="./Privacy-Policy.html" class="twbb-item" style="color: black;">Chính sách bảo mật</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -3608,7 +3638,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-utrhrjdw e-con-full e-flex e-con e-parent e-lazyloaded"
+                    <div class="elementor-element elementor-element-utrhrjdw e-con-full e-flex e-con e-parent"
                         data-id="utrhrjdw" data-element_type="container">
                         <div class="elementor-element elementor-element-l7lcnqdq elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-heading"
                             data-id="l7lcnqdq" data-element_type="widget" data-widget_type="heading.default">
@@ -3647,16 +3677,21 @@
                                 <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                                     <ul id="menu-2-9mu4dvok"
                                         class="twbb-nav-menu twbb-menu_term_id-13707 sm-vertical twbb-menu-columns"
-                                        data-smartmenus-id="17391526562179373">
+                                        data-smartmenus-id="1738660459373064">
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113229">
-                                            <a href="https://10web-site.ai/187/humane-bunny/product-category/plumbing-supplies/"
-                                                class="twbb-item">Plumbing Supplies</a>
+                                            <a href="https://www.google.com/maps/place/P.+Ao+Sen%2F8B+N.+6,+T%E1%BB%95+4,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@20.9821581,105.7851447,17z/data=!4m10!1m2!2m1!1zU-G7kSA4QiwgTmfDtSA1LCBQaOG7kSBBbyBTZW4sIFBoxrDhu51uZyBN4buZIExhbywgUXXhuq1uIEjDoCDEkMO0bmcsIFRow6BuaCBwaOG7kSBIw6AgTuG7mWksIFZp4buHdCBOYW0!3m6!1s0x3135accc28ee56d1:0xa0269505baa7b26b!8m2!3d20.9821581!4d105.787725!15sCmhT4buRIDhCLCBOZ8O1IDUsIFBo4buRIEFvIFNlbiwgUGjGsOG7nW5nIE3hu5kgTGFvLCBRdeG6rW4gSMOgIMSQw7RuZywgVGjDoG5oIHBo4buRIEjDoCBO4buZaSwgVmnhu4d0IE5hbZIBEWNvbXBvdW5kX2J1aWxkaW5n4AEA!16s%2Fg%2F11fpttpr7_!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
+                                                class="twbb-item" style="color: black">Địa chỉ: Số 8B, Ngõ 5, Phố Ao Sen, Phường Mộ Lao, Quận Hà Đông, Thành phố Hà Nội, Việt Nam.</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113230">
-                                            <a href="https://10web-site.ai/187/humane-bunny/product-category/electrical-supplies/"
-                                                class="twbb-item">Electrical Supplies</a>
+                                            <p
+                                                class="twbb-item" style="color: black; margin-left: 18px;">Điện thoại: 0773 026 042</p>
+                                        </li>
+                                        <li
+                                            class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113230">
+                                            <p
+                                                class="twbb-item" style="color: black; margin-left: 18px;">Email: hoangthanhthanglongvtb.group@gmail.com</p>
                                         </li>
                                     </ul>
                                 </nav>
@@ -3665,12 +3700,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-7paf0r16 e-con-full e-flex e-con e-parent e-lazyloaded"
+                    <div class="elementor-element elementor-element-7paf0r16 e-con-full e-flex e-con e-parent"
                         data-id="7paf0r16" data-element_type="container">
                     </div>
 
-
-                    <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
+                    <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
                             data-id="rkdqykrp" data-element_type="widget">
@@ -3679,8 +3713,51 @@
                                     style="width: 75%; height: auto; display: block; margin: auto;">
                             </div>
                         </div>
+                    </div> -->
+                    <div  style="margin-left: -100px;"class="container123">
+                        <!-- Facebook Page -->
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/profile.php?id=61573656447006" 
+                             data-tabs="" 
+                             data-width="400" 
+                             data-height="200" 
+                             data-small-header="false" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true">
+                        </div>
+                    
+                        <!-- Google Maps -->
+                        <div class="maps-container">
+                            <iframe 
+                                width="400" 
+                                height="200" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3589.4445350448673!2d105.7851447!3d20.9821581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1742523516895!5m2!1svi!2s">
+                            </iframe>
+                        </div>
                     </div>
-                    <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent e-lazyloaded"
+                    
+                    <!-- Nhúng Facebook SDK -->
+                    <script async defer crossorigin="anonymous" 
+                            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0">
+                    </script>
+                    
+                    <style>
+                        .container123 {
+                            width: 400px; /* Đặt chiều rộng cố định */
+                            margin: 0 auto; /* Căn giữa */
+                        }
+                        .maps-container {
+                            margin-top: 10px; /* Khoảng cách giữa Facebook và Maps */
+                        }
+                    </style>
+
+                    <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
                             data-id="rkdqykrp" data-element_type="widget"
@@ -3690,9 +3767,9 @@
                                 <form class="elementor-form" method="post" name="Subscribe to Our Newsletter">
                                     <input type="hidden" name="post_id" value="113234">
                                     <input type="hidden" name="form_id" value="rkdqykrp">
-                                    <input type="hidden" name="referer_title" value="About Hoàng Thành Thăng Long">
+                                    <input type="hidden" name="referer_title" value="Home">
 
-                                    <input type="hidden" name="queried_id" value="113208">
+                                    <input type="hidden" name="queried_id" value="113207">
 
                                     <div class="elementor-form-fields-wrapper elementor-labels-">
                                         <div
@@ -3742,7 +3819,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="elementor-element elementor-element-lmt1362h e-con-full e-flex e-con e-parent e-lazyloaded"
+                <div class="elementor-element elementor-element-lmt1362h e-con-full e-flex e-con e-parent"
                     data-id="lmt1362h" data-element_type="container">
                     <div class="elementor-element elementor-element-dqav9tx3 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-text-editor"
                         data-id="dqav9tx3" data-element_type="widget" data-widget_type="text-editor.default">
@@ -3757,7 +3834,7 @@
                             <!-- <nav
                                 class="twbb-nav-menu--main twbb-nav-menu__container twbb-nav-menu--layout-horizontal e--pointer-none">
                                 <ul id="menu-1-xutm5wk2" class="twbb-nav-menu twbb-menu_term_id-13708"
-                                    data-smartmenus-id="17391526562419592">
+                                    data-smartmenus-id="17386604593759058">
                                     <li
                                         class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113231">
                                         <a href="https://10web-site.ai/187/humane-bunny/terms-and-conditions/"
@@ -3771,9 +3848,9 @@
                                     </li>
                                 </ul>
                             </nav> -->
-                            <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
+                            <!-- <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                                 <ul id="menu-2-xutm5wk2" class="twbb-nav-menu twbb-menu_term_id-13708"
-                                    data-smartmenus-id="17391526562424456">
+                                    data-smartmenus-id="1738660459375338">
                                     <li
                                         class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-113231">
                                         <a href="https://10web-site.ai/187/humane-bunny/terms-and-conditions/"
@@ -3786,32 +3863,35 @@
                                             class="twbb-item">Privacy Policy</a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </nav> -->
                             <style>
                             </style>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
+                    <div style="margin-right: 50px;" class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
                         data-id="p95d8kgo" data-element_type="widget" data-widget_type="social-icons.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-social-icons-wrapper elementor-grid">
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
-                                        target="_blank">
+                                    <a href="https://www.facebook.com/profile.php?id=61573656447006" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
+                                        target="_blank" rel="noopener noreferrer">
                                         <span class="elementor-screen-only">Facebook</span>
                                         <i class="fab fa-facebook"></i> </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Instagram</span>
-                                        <i class="fab fa-instagram"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-phone elementor-repeater-item-" href="https://zalo.me/0773026042"
+                                    target="_blank" rel="noopener noreferrer">
+                                        <span class="elementor-screen-only">Phone</span>
+                                        <i class="fas fa-phone-alt"></i>
+                                    </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Linkedin</span>
-                                        <i class="fab fa-linkedin"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-email elementor-repeater-item-" 
+                                       href="mailto:hoangthanhthanglongvtb.group@gmail.com" 
+                                       target="_blank">
+                                        <span class="elementor-screen-only">Gmail</span>
+                                        <i class="fas fa-envelope"></i> 
+                                    </a>
                                 </span>
                             </div>
                         </div>
@@ -4082,6 +4162,30 @@
     
                 
                 getCartCount();
+
+
+                const categoryDropdown = document.getElementById("category-dropdown");
+
+fetch("https://localhost:7171/api/Category/GetAll", {
+    method: "GET",
+    headers: { "Accept": "*/*" }
+})
+    .then(response => {
+        if (!response.ok) throw new Error("Không thể lấy danh mục.");
+        return response.json();
+    })
+    .then(categories => {
+        categoryDropdown.innerHTML = ""; // Xóa dữ liệu cũ
+
+        categories.forEach(category => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="./Building-Materials.html?pcid=${category.id}"><strong>${category.name}</strong></a>`;
+            categoryDropdown.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error("Lỗi khi lấy danh mục:", error);
+    });
                 // end DOMContentLoaded
             });
     

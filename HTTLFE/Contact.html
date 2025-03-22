@@ -1614,9 +1614,9 @@
     </style>
 
     <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
+        <!-- <a href="https://www.facebook.com/profile.php?id=61573656447006" class="icon" target="_blank" rel="noopener noreferrer">
         <img src="./images/2023_Facebook_icon.svg.png" alt="Facebook gạch hoàng thành thăng long">
-    </a>
+    </a> -->
     <!-- <a href="#" class="icon">
         <img src="./images/725300.png" alt="YouTube gạch hoàng thành thăng long">
     </a>
@@ -1626,9 +1626,9 @@
     <a href="tel:0773026042" class="icon">
         <img src="./images/1180304.png" alt="Phone gạch Hoàng Thành Thăng Long">
     </a> -->
-        <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
+        <!-- <a href="https://zalo.me/0773026042" class="icon" target="_blank" rel="noopener noreferrer">
             <img src="./images/zalo-iconnnnnnnnnnnnnnnnnn.png" alt="Zalo gạch hoàng thành thăng long">
-        </a>
+        </a> -->
         <a href="#" class="icon scroll-top">
             <img src="./images/top.png" alt="Scroll Up">
         </a>
@@ -1698,6 +1698,36 @@
                                     .menu-item:hover .dropdown-menu {
                                         display: block;
                                     }
+
+                                    .dropdown-menu1 {
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+.dropdown-menu1 li {
+  margin: 5px 0;
+}
+
+.dropdown-menu1 li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: nhẹ nhàng, không làm block bị cứng */
+.dropdown-menu1 li a:hover {
+  background-color: #f2f2f2;
+  color: #ff6600;
+}
+
                                 </style>
                                 <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -1706,20 +1736,21 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>GIỚI THIỆU</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./AboutUs.html"><strong>Giới thiệu về chúng tôi</strong></a></li>
                                         <li><a href="./HistoryCompany.html"><strong>Lịch sử phát triển</strong></a></li>
                                         <li><a href="./DevelopmentOrientation.html"><strong>Định hướng phát
                                                     triển</strong></a></li>
                                     </ul>
                                 </li>
-                                <li
-                                    class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218">
-                                    <a href="./Building-Materials.html" aria-current="page"
-                                        class="twbb-item twbb-item-active"
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218 dropdown">
+                                    <a href="./Building-Materials.html" class="twbb-item twbb-item-active" id="category-menu"
                                         style="font-family: 'Segoe UI', sans-serif !important;">
                                         <strong>SẢN PHẨM</strong>
                                     </a>
+                                    <ul class="dropdown-menu1" id="category-dropdown" style="display: none; position: absolute; background: white; list-style: none; padding: 20px; border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                                        
+                                    </ul>
                                 </li>
                                 <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -1729,7 +1760,7 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>CHÍNH SÁCH</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./Discount-Policy.html"><strong>Chính sách chiết khấu</strong></a>
                                         </li>
                                         <li><a href="./Sales-Debt-Policy.html"><strong>Chính sách bán hàng & công
@@ -1821,6 +1852,35 @@
                                     .menu-item:hover .dropdown-menu {
                                         display: block;
                                     }
+
+                                    .dropdown-menu1 {
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+.dropdown-menu1 li {
+  margin: 5px 0;
+}
+
+.dropdown-menu1 li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: nhẹ nhàng, không làm block bị cứng */
+.dropdown-menu1 li a:hover {
+  background-color: #f2f2f2;
+  color: #ff6600;
+}
                                 </style>
                                 <li
                                 class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -1829,19 +1889,20 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>GIỚI THIỆU</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./AboutUs.html"><strong>Giới thiệu về chúng tôi</strong></a></li>
                                         <li><a href="./HistoryCompany.html"><strong>Lịch sử phát triển</strong></a></li>
                                         <li><a href="./DevelopmentOrientation.html"><strong>Định hướng phát triển</strong></a></li>
                                     </ul>
                                 </li>
-                                <li
-                                    class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218">
-                                    <a href="./Building-Materials.html" aria-current="page"
-                                        class="twbb-item twbb-item-active"
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113218 dropdown">
+                                    <a href="#" class="twbb-item twbb-item-active" id="category-menu"
                                         style="font-family: 'Segoe UI', sans-serif !important;">
                                         <strong>SẢN PHẨM</strong>
                                     </a>
+                                    <ul class="dropdown-menu1" id="category-dropdown" style="display: none; position: absolute; background: white; list-style: none; padding: 20px; border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                                        
+                                    </ul>
                                 </li>
                                 <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113219">
@@ -1851,7 +1912,7 @@
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113220 dropdown">
                                     <a href="#" class="twbb-item"><strong>CHÍNH SÁCH</strong></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu1">
                                         <li><a href="./Discount-Policy.html"><strong>Chính sách chiết khấu</strong></a></li>
                                         <li><a href="./Sales-Debt-Policy.html"><strong>Chính sách bán hàng & công nợ</strong></a></li>
                                         <li><a href="./Privacy-Policy.html"><strong>Chính sách bảo mật</strong></a></li>
@@ -3155,177 +3216,293 @@
                                 </div>
                                 <style>
                                     body {
-                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-                                        background-color: #f9f9f9;
-                                        margin: 0;
-                                        padding: 0;
-                                    }
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background-color: #fdf6f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
 
-                                    .container {
-                                        max-width: 1350px;
-                                        margin: 50px auto;
-                                        background-color: #ffffff;
-                                        padding: 40px;
-                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                                        border-radius: 10px;
-                                        line-height: 1.8;
-                                    }
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
 
-                                    h1 {
-                                        font-size: 32px;
-                                        color: #333;
-                                        text-align: center;
-                                        margin-bottom: 20px;
-                                    }
+h1 {
+    font-size: 32px;
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
 
-                                    h1::after {
-                                        content: "";
-                                        width: 60px;
-                                        height: 4px;
-                                        background-color: #FF7F50;
-                                        display: block;
-                                        margin: 10px auto 0;
-                                        border-radius: 2px;
-                                    }
+h1::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #ff6600; /* Cam */
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
 
-                                    .section {
-                                        background-color: #f1f1f1;
-                                        padding: 20px;
-                                        margin-bottom: 20px;
-                                        border-left: 5px solid #FF7F50;
-                                        border-radius: 5px;
-                                        transition: background-color 0.3s ease-in-out;
-                                    }
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-                                    .section:hover {
-                                        background-color: #ffece2;
-                                    }
+.company-info, .contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
 
-                                    iframe {
-                                        width: 100%;
-                                        height: 300px;
-                                        border-radius: 5px;
-                                        border: 0;
-                                    }
+.section {
+    background-color: #fff4e6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff6600; /* Cam */
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
 
-                                    /* Căn chỉnh form vào giữa */
-                                    #contactForm {
-                                        max-width: 400px;
-                                        margin: 0 auto;
-                                        background: white;
-                                        padding: 20px;
-                                        border-radius: 10px;
-                                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                                    }
+.section:hover {
+    background-color: #ffe9d6; /* Cam nhạt khi hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2);
+}
 
-                                    /* Đảm bảo tất cả input, select có cùng kích thước */
-                                    #contactForm .form-control {
-                                        width: 100%;
-                                        /* Đảm bảo chiều rộng đồng đều */
-                                        height: 45px;
-                                        /* Giữ chiều cao cố định */
-                                        border-radius: 8px;
-                                        border: 1px solid #ccc;
-                                        padding: 10px;
-                                        transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                                    }
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    border: 0;
+}
 
-                                    /* Khi focus vào input */
-                                    #contactForm .form-control:focus {
-                                        border-color: #d35400;
-                                        box-shadow: 0 0 5px rgba(211, 84, 0, 0.5);
-                                    }
+#contactForm {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
 
-                                    /* Đảm bảo nhãn (label) và ô input thẳng hàng */
-                                    #contactForm .mb-3 {
-                                        display: flex;
-                                        flex-direction: column;
-                                        align-items: flex-start;
-                                        width: 100%;
-                                    }
+.form-label {
+    font-weight: bold;
+    color: #ff6600;
+}
 
-                                    /* Căn chỉnh nút gửi */
-                                    #contactForm button {
-                                        padding: 12px;
-                                        border-radius: 8px;
-                                        font-weight: bold;
-                                        text-transform: uppercase;
-                                        background: linear-gradient(45deg, #d35400, #8e44ad);
-                                        border: none;
-                                        transition: all 0.3s ease-in-out;
-                                        width: 100%;
-                                        /* Đảm bảo nút rộng bằng input */
-                                    }
+.form-control {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
 
-                                    /* Hover cho nút */
-                                    #contactForm button:hover {
-                                        background: linear-gradient(45deg, #8e44ad, #d35400);
-                                        transform: scale(1.05);
-                                    }
+.form-control:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 6px rgba(255, 102, 0, 0.5);
+}
+
+.btn-primary {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff6600, #ff9900);
+    border: none;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #ff9900, #ff6600);
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* Tổng thể form */
+.contact-form-wrapper {
+    background: #fff3e0; /* Nền nhạt vàng/cam nhẹ */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+.contact-form-wrapper .form-control {
+    border-radius: 10px;  /* Bo góc tròn */
+    border: 1px solid #ff9800;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Hover & Focus cho input */
+.contact-form-wrapper .form-control:hover,
+.contact-form-wrapper .form-control:focus {
+    border-color: #e65100;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+}
+
+/* Label */
+.contact-form-wrapper .form-label {
+    font-weight: bold;
+    color: #e65100;
+}
+
+/* Nút Submit */
+.contact-form-wrapper .btn-primary {
+    background-color: #ff9800; /* Cam */
+    border: none;
+    border-radius: 12px; /* Bo góc */
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+/* Hover nút */
+.contact-form-wrapper .btn-primary:hover {
+    background-color: #e65100; /* Cam đậm */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(230, 81, 0, 0.5);
+}
+
+/* Wrapper tổng */
+.contact-form-wrapper {
+    background: #fff8f0; /* Nền nhạt */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Label */
+.contact-form-wrapper .form-label {
+    font-weight: bold;
+    color: #e65100; /* Cam đậm */
+}
+
+/* Input fields */
+.contact-form-wrapper .form-control {
+    border-radius: 12px;  /* Bo góc input */
+    border: 2px solid #ff9800;
+    padding: 12px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+/* Hover & Focus input */
+.contact-form-wrapper .form-control:hover,
+.contact-form-wrapper .form-control:focus {
+    border-color: #e65100;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+    background-color: #fffaf2;
+}
+
+/* Nút submit */
+.contact-form-wrapper .btn-primary {
+    background-color: #ff9800; /* Cam */
+    border: none;
+    border-radius: 15px; /* Bo góc nút */
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+/* Hover nút */
+.contact-form-wrapper .btn-primary:hover {
+    background-color: #e65100; /* Cam đậm */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(230, 81, 0, 0.5);
+}
+
+/* Style input */
+input.form-control {
+    border-radius: 12px; /* Bo góc */
+    border: 2px solid #ff9800; /* Viền cam */
+    padding: 12px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+/* Hover và focus */
+input.form-control:hover,
+input.form-control:focus {
+    border-color: #e65100; /* Viền cam đậm hơn */
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); /* Đổ bóng */
+    background-color: #fffaf2; /* Nền nhẹ */
+}
+
+
+
+
                                 </style>
+<h1>Liên Hệ Công Ty TNHH Hoàng Thành Thăng Long</h1>
+<div class="container">
+    
+    <div class="content-wrapper">
+        <!-- Thông tin công ty -->
+        <div class="company-info">
+            <div class="section">
+                <h4>Địa chỉ:</h4>
+                <p>Số 8B, Ngõ 5, Phố Ao Sen, Phường Mộ Lao, Quận Hà Đông, Thành phố Hà Nội, Việt Nam.</p>
+            </div>
+            <div class="section">
+                <h4>Điện thoại:</h4>
+                <p>0773 026 042</p>
+            </div>
+            <div class="section">
+                <h4>Email:</h4>
+                <p>hoangthanhthanglongvtb.group@gmail.com</p>
+            </div>
+            <div class="section">
+                <h4>Bản đồ:</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3589.4445350448673!2d105.7851447!3d20.9821581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1742523516895!5m2!1svi!2s" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
 
-                                <div class="container">
-                                    <h1>Liên Hệ Công Ty TNHH Hoàng Thành Thăng Long</h1>
-
-                                    <div class="section">
-                                        <h4>Địa chỉ:</h4>
-                                        <p>Số 8B, Ngõ 5, Phố Ao Sen, Phường Mộ Lao, Quận Hà Đông, Thành phố Hà Nội, Việt
-                                            Nam.</p>
-                                    </div>
-
-                                    <div class="section">
-                                        <h4>Điện thoại:</h4>
-                                        <p>0773 026 042</p>
-                                    </div>
-
-                                    <div class="section">
-                                        <h4>Email:</h4>
-                                        <p>hoangthanhthanglongvtb.group@gmail.com
-
-                                        </p>
-                                    </div>
-
-                                    <div class="section">
-                                        <h4>Bản đồ:</h4>
-                                        <!-- <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.66375866883!2d105.78514471083423!3d20.982158080574834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1739592245092!5m2!1svi!2s"
-                                            allowfullscreen=""
-                                            loading="lazy">
-                                        </iframe> -->
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.66375866883!2d105.78514471083423!3d20.982158080574834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1739592245092!5m2!1svi!2s"
-                                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade">
-                                        </iframe>
-                                    </div>
-
-
-                                    <h4 style="text-align: center;">Để lại thông tin liên hệ</h4>
-                                    <form id="contactForm">
-                                        <div class="mb-3">
-                                            <label class="form-label">Họ và tên:</label>
-                                            <input type="text" class="form-control" id="name" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Số điện thoại:</label>
-                                            <input type="text" class="form-control" id="phone" maxlength="10" required>
-                                            <small class="text-danger" id="phoneError"></small> <!-- Hiển thị lỗi nếu nhập sai -->
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Email:</label>
-                                            <input type="email" class="form-control" id="email" required>
-                                        </div>
-                                        <!-- <div class="mb-3">
-                                            <label class="form-label">Trạng thái:</label>
-                                            <select class="form-control" id="status">
-                                                <option value="0">Chờ xử lý</option>
-                                                <option value="1">Đã liên hệ</option>
-                                            </select>
-                                        </div> -->
-                                        <button type="submit" class="btn btn-primary w-100" style="margin-top: 10px;">Gửi liên hệ của bạn</button>
-                                    </form>
-
-                                </div>
+        <!-- Form liên hệ -->
+        <div class="contact-form-wrapper">
+            <h4>Để lại thông tin liên hệ</h4>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label class="form-label">Họ và tên:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Số điện thoại:</label>
+                    <input type="text" class="form-control" id="phone" maxlength="10" required>
+                    <small class="text-danger" id="phoneError"></small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Gửi liên hệ của bạn</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
@@ -3628,8 +3805,7 @@
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113227">
-                                            <a href="./Sales-Debt-Policy.html" class="twbb-item">Chính sách bán hàng &
-                                                công nợ</a>
+                                            <a href="./Sales-Debt-Policy.html" class="twbb-item">Chính sách bán hàng & công nợ</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_tag menu-item-113228">
@@ -3685,8 +3861,7 @@
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113229">
                                             <a href="https://www.google.com/maps/place/P.+Ao+Sen%2F8B+N.+6,+T%E1%BB%95+4,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@20.9821581,105.7851447,17z/data=!4m10!1m2!2m1!1zU-G7kSA4QiwgTmfDtSA1LCBQaOG7kSBBbyBTZW4sIFBoxrDhu51uZyBN4buZIExhbywgUXXhuq1uIEjDoCDEkMO0bmcsIFRow6BuaCBwaOG7kSBIw6AgTuG7mWksIFZp4buHdCBOYW0!3m6!1s0x3135accc28ee56d1:0xa0269505baa7b26b!8m2!3d20.9821581!4d105.787725!15sCmhT4buRIDhCLCBOZ8O1IDUsIFBo4buRIEFvIFNlbiwgUGjGsOG7nW5nIE3hu5kgTGFvLCBRdeG6rW4gSMOgIMSQw7RuZywgVGjDoG5oIHBo4buRIEjDoCBO4buZaSwgVmnhu4d0IE5hbZIBEWNvbXBvdW5kX2J1aWxkaW5n4AEA!16s%2Fg%2F11fpttpr7_!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
-                                                class="twbb-item">Địa chỉ: Số 8B, Ngõ 5, Phố Ao Sen, Phường Mộ Lao, Quận
-                                                Hà Đông, Thành phố Hà Nội, Việt Nam.</a>
+                                                class="twbb-item">Địa chỉ: Số 8B, Ngõ 5, Phố Ao Sen, Phường Mộ Lao, Quận Hà Đông, Thành phố Hà Nội, Việt Nam.</a>
                                         </li>
                                         <li
                                             class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-113230">
@@ -3724,7 +3899,7 @@
                     </div>
 
 
-                    <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
+                    <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
                             data-id="rkdqykrp" data-element_type="widget">
@@ -3733,7 +3908,49 @@
                                     style="width: 75%; height: auto; display: block; margin: auto;">
                             </div>
                         </div>
+                    </div> -->
+                    <div style="margin-left: -100px;" class="container123">
+                        <!-- Facebook Page -->
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/profile.php?id=61573656447006" 
+                             data-tabs="" 
+                             data-width="400" 
+                             data-height="200" 
+                             data-small-header="false" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true">
+                        </div>
+                    
+                        <!-- Google Maps -->
+                        <div class="maps-container">
+                            <iframe 
+                                width="400" 
+                                height="200" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3589.4445350448673!2d105.7851447!3d20.9821581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accc28ee56d1%3A0xa0269505baa7b26b!2zUC4gQW8gU2VuLzhCIE4uIDYsIFThu5UgNCwgSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1742523516895!5m2!1svi!2s">
+                            </iframe>
+                        </div>
                     </div>
+                    
+                    <!-- Nhúng Facebook SDK -->
+                    <script async defer crossorigin="anonymous" 
+                            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0">
+                    </script>
+                    
+                    <style>
+                        .container123 {
+                            width: 400px; /* Đặt chiều rộng cố định */
+                            margin: 0 auto; /* Căn giữa */
+                        }
+                        .maps-container {
+                            margin-top: 10px; /* Khoảng cách giữa Facebook và Maps */
+                        }
+                    </style>
                     <!-- <div class="elementor-element elementor-element-u5bh0c0h e-con-full e-flex e-con e-parent e-lazyloaded"
                         data-id="u5bh0c0h" data-element_type="container">
                         <div class="elementor-element elementor-element-rkdqykrp elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-mobile-button-align-stretch elementor-button-align-center elementor-widget elementor-widget-twbb_form"
@@ -3845,27 +4062,30 @@
                             </style>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
+                    <div style="margin-right: 50px;" class="elementor-element elementor-element-p95d8kgo elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
                         data-id="p95d8kgo" data-element_type="widget" data-widget_type="social-icons.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-social-icons-wrapper elementor-grid">
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
-                                        target="_blank">
+                                    <a href="https://www.facebook.com/profile.php?id=61573656447006" class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-"
+                                        target="_blank" rel="noopener noreferrer">
                                         <span class="elementor-screen-only">Facebook</span>
                                         <i class="fab fa-facebook"></i> </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Instagram</span>
-                                        <i class="fab fa-instagram"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-phone elementor-repeater-item-" href="https://zalo.me/0773026042"
+                                    target="_blank" rel="noopener noreferrer">
+                                        <span class="elementor-screen-only">Phone</span>
+                                        <i class="fas fa-phone-alt"></i>
+                                    </a>
                                 </span>
                                 <span class="elementor-grid-item">
-                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-"
-                                        target="_blank">
-                                        <span class="elementor-screen-only">Linkedin</span>
-                                        <i class="fab fa-linkedin"></i> </a>
+                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-email elementor-repeater-item-" 
+                                       href="mailto:hoangthanhthanglongvtb.group@gmail.com" 
+                                       target="_blank">
+                                        <span class="elementor-screen-only">Gmail</span>
+                                        <i class="fas fa-envelope"></i> 
+                                    </a>
                                 </span>
                             </div>
                         </div>
@@ -4137,6 +4357,29 @@
 
 
             getCartCount();
+
+            const categoryDropdown = document.getElementById("category-dropdown");
+
+fetch("https://localhost:7171/api/Category/GetAll", {
+    method: "GET",
+    headers: { "Accept": "*/*" }
+})
+    .then(response => {
+        if (!response.ok) throw new Error("Không thể lấy danh mục.");
+        return response.json();
+    })
+    .then(categories => {
+        categoryDropdown.innerHTML = ""; // Xóa dữ liệu cũ
+
+        categories.forEach(category => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="./Building-Materials.html?pcid=${category.id}"><strong>${category.name}</strong></a>`;
+            categoryDropdown.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error("Lỗi khi lấy danh mục:", error);
+    });
             // end DOMContentLoaded
         });
 
