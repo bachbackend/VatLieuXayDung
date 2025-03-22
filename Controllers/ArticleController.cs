@@ -95,6 +95,32 @@ namespace VatLieuXayDung.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetRandom6Article")]
+        public async Task<IActionResult> GetRandom6Article()
+        {
+            var randomArticles = await _context.Articles
+                .Include(p => p.ArticleCategory)
+                .Include(p => p.User)
+                .OrderBy(r => Guid.NewGuid()) // Lấy ngẫu nhiên
+                .Take(6)
+                .Select(p => new ArticleReturnDTO
+                {
+                    Id = p.Id,
+                    ArticleCategoryId = p.ArticleCategoryId,
+                    ArticleCategoryName = p.ArticleCategory.Name,
+                    Title = p.Title,
+                    Content = p.Content,
+                    Image = p.Image,
+                    UserId = p.UserId,
+                    UserName = p.User.Username,
+                    Status = p.Status,
+                    CreatedAt = p.CreatedAt
+                })
+                .ToListAsync();
+
+            return Ok(randomArticles);
+        }
+
         [HttpGet("GetRandom5Article")]
         public async Task<IActionResult> GetRandom5Article()
         {

@@ -642,7 +642,7 @@
                     <img src="./images/zalo-iconnnnnnnnnnnnnnnnnn.png" alt="Zalo gạch hoàng thành thăng long">
                 </a> -->
                 <a href="#" class="icon scroll-top">
-                    <img src="./images/top.png" alt="Scroll Up">
+                    <img src="./images/uppppppppp.png" alt="Scroll Up">
                 </a>
             </div>
 
@@ -1937,29 +1937,30 @@
 
             // Hàm render các nút phân trang
             function renderPaginationButtons(totalPages) {
-                const paginationElement = document.getElementById('pagination');
-                paginationElement.innerHTML = ''; // Xóa các nút phân trang cũ
+    const paginationElement = document.getElementById('pagination');
+    paginationElement.innerHTML = ''; // Xóa các nút phân trang cũ
 
-                for (let i = 1; i <= totalPages; i++) {
-                    const button = document.createElement('button');
-                    button.textContent = i;
-                    button.classList.add('btn', 'btn-outline-primary', 'me-2');
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.classList.add('btn', 'btn-outline-primary', 'me-2'); // Thêm bo góc ở đây
 
-                    // Thêm lớp 'active' cho trang hiện tại
-                    if (i === currentPage) {
-                        button.classList.remove('btn-outline-primary');
-                        button.classList.add('btn-primary', 'active');
-                    }
+        // Thêm lớp 'active' cho trang hiện tại
+        if (i === currentPage) {
+            button.classList.remove('btn-outline-primary');
+            button.classList.add('btn-primary', 'active');
+        }
 
-                    // Thêm sự kiện click để chuyển trang và cập nhật nút active
-                    button.addEventListener('click', () => {
-                        currentPage = i; // Cập nhật trang hiện tại
-                        fetchAndDisplayProducts(currentPage); // Gọi lại API để lấy dữ liệu trang mới
-                    });
+        // Thêm sự kiện click để chuyển trang và cập nhật nút active
+        button.addEventListener('click', () => {
+            currentPage = i; // Cập nhật trang hiện tại
+            fetchAndDisplayProducts(currentPage); // Gọi lại API để lấy dữ liệu trang mới
+        });
 
-                    paginationElement.appendChild(button);
-                }
-            }
+        paginationElement.appendChild(button);
+    }
+}
+
 
 
             // Lấy danh sách danh mục từ API và thêm vào dropdown

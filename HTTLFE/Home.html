@@ -695,7 +695,7 @@
         <img src="./images/zalo-iconnnnnnnnnnnnnnnnnn.png" alt="Zalo gạch hoàng thành thăng long">
     </a> -->
     <a href="#" class="icon scroll-top">
-        <img src="./images/top.png" alt="Scroll Up">
+        <img src="./images/uppppppppp.png" alt="Scroll Up">
     </a>
 </div>
 
@@ -5919,12 +5919,18 @@ How awesome is that?🤯">https://10web-site.ai/187/humane-bunny/</div>
                     data.forEach(product => {
                         const productCard = document.createElement('div');
                         productCard.classList.add('col-md-2', 'product-card');
+                        const randomViews = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+                    const createdAt = new Date(product.createdAt);
+                    const formattedDate = createdAt.toLocaleDateString('vi-VN');
 
                         productCard.innerHTML = `
                         <a href="Product-Detail.html?pid=${product.id}" class="woocommerce-LoopProduct-link">
                                 <img src="https://localhost:7171/images/${product.image}" alt="${product.name}" class="product-image1" width="220" height="220" />
                             <br>
                             <h6 style="font-size: 15px; text-transform: capitalize;">${product.name}</h6>
+                            <p class="product-date"style="font-size: 15px; color: gray">Ngày đăng: ${formattedDate}</p>
+                            <p class="product-views" style="margin-top: -20px; font-size: 15px; color: gray">Lượt xem: ${randomViews}</p>
+                            <p class="product-sales" style="margin-top: -20px; font-size: 15px; color: gray">Lượt bán: ${product.saleQuantity ?? 0}</p>
                         </a>
                     `;
 
@@ -5950,12 +5956,18 @@ How awesome is that?🤯">https://10web-site.ai/187/humane-bunny/</div>
                     data.forEach(product => {
                         const productCard = document.createElement('div');
                         productCard.classList.add('col-md-2', 'product-card');
+                        const randomViews = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+                    const createdAt = new Date(product.createdAt);
+                    const formattedDate = createdAt.toLocaleDateString('vi-VN');
 
                         productCard.innerHTML = `
                         <a href="Product-Detail.html?pid=${product.id}" class="woocommerce-LoopProduct-link">
                                 <img src="https://localhost:7171/images/${product.image}" alt="${product.name}" class="product-image1" width="220" height="220" />
                             
                             <h6 class="woocommerce-loop-product__title" style="font-size: 15px; text-transform: capitalize;">${product.name}</h6>
+                            <p class="product-date"style="font-size: 15px; color: gray">Ngày đăng: ${formattedDate}</p>
+                            <p class="product-views" style="margin-top: -20px; font-size: 15px; color: gray">Lượt xem: ${randomViews}</p>
+                            <p class="product-sales" style="margin-top: -20px; font-size: 15px; color: gray">Lượt bán: ${product.saleQuantity ?? 0}</p>
                         </a>
                     `;
 
@@ -5981,12 +5993,18 @@ How awesome is that?🤯">https://10web-site.ai/187/humane-bunny/</div>
                     data.forEach(product => {
                         const productCard = document.createElement('div');
                         productCard.classList.add('col-md-2', 'product-card');
+                        const randomViews = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+                    const createdAt = new Date(product.createdAt);
+                    const formattedDate = createdAt.toLocaleDateString('vi-VN');
 
                         productCard.innerHTML = `
                         <a href="Product-Detail.html?pid=${product.id}" class="woocommerce-LoopProduct-link">
                                 <img src="https://localhost:7171/images/${product.image}" alt="${product.name}" class="product-image1" width="220" height="220" />
                             
                             <h6 class="woocommerce-loop-product__title" style="font-size: 15px; text-transform: capitalize;">${product.name}</h6>
+                            <p class="product-date"style="font-size: 15px; color: gray">Ngày đăng: ${formattedDate}</p>
+                            <p class="product-views" style="margin-top: -20px; font-size: 15px; color: gray">Lượt xem: ${randomViews}</p>
+                            <p class="product-sales" style="margin-top: -20px; font-size: 15px; color: gray">Lượt bán: ${product.saleQuantity ?? 0}</p>
                         </a>
                     `;
 
